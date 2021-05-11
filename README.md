@@ -19,11 +19,15 @@ TBA
 
 ## Development
 
-Technologies used:
+Technologies:
 
 - React using `create-react-app`
 - React Router using `react-router-dom`
 - Styled Components
+
+Sources:
+
+- [gametb.com](gametb.com) for the Switch game images.
 
 ## Usage / Running Project Locally
 

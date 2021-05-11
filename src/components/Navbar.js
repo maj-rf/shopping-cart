@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
+//---------Styled Components----------------//
 const Nav = styled.nav`
   display: flex;
   align-items: center;
@@ -18,19 +20,27 @@ const Logo = styled.div`
   font-size: 25px;
 `;
 
-const LinksWrapper = styled.ul`
+const LinksWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 30%;
   height: 100%;
 `;
-const Link = styled.li`
-  height: 100%;
-  list-style: none;
+const StyledLink = styled(Link)`
+  height: auto;
+  padding: 3vh;
+  color: #fff;
+  text-decoration: none;
   font-weight: bold;
   cursor: pointer;
-  :hover {
+  &:focus,
+  &:visited,
+  &:link {
+    text-decoration: none;
+  }
+  :hover,
+  &:active {
     background: #fff;
     color: black;
   }
@@ -41,14 +51,15 @@ const BurgerLines = styled.div`
   background-color: #fff;
   margin: 5px;
 `;
+//----------End of Styled Components--------------//
 export default function Navbar() {
   return (
     <Nav>
       <Logo>Switcher</Logo>
       <LinksWrapper>
-        <Link>Home</Link>
-        <Link>Shop</Link>
-        <Link>Cart</Link>
+        <StyledLink to="/">Home</StyledLink>
+        <StyledLink to="/shop">Shop</StyledLink>
+        <StyledLink to="/#">Cart</StyledLink>
       </LinksWrapper>
       <div>
         <BurgerLines></BurgerLines>
