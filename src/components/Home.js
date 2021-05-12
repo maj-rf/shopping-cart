@@ -1,33 +1,50 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import data from '../helpers/data';
 import shuffle from '../helpers/shuffle';
+
 //---------------Styled Components-----------------//
+const StyledList = styled.ul`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+
+const ListItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+`;
+
+const Styledh1 = styled.h1`
+  font-size: 30px;
+`;
+
 //---------End of Styled Components----------------//
+
 export default function Home() {
-  const [featuredGame] = useState(shuffle(data)); //randomize Feature game
+  const [featuredGame] = useState(shuffle([...data])); //randomize Featured game
   return (
     <div>
       <header>
-        <h1>Toss a coin to your Switcher!</h1>
+        <Styledh1>Toss a coin to your Switcher!</Styledh1>
         <p>
           {' '}
           Switcher is your one-stop online Shop for Nintendo Switch Products.
         </p>
         <div>
-          <h2>Featured Items</h2>
-          <ul>
+          <Styledh1 as="h2">Featured Items</Styledh1>
+          <StyledList>
             {featuredGame.slice(0, 3).map((game) => {
               return (
-                <li key={game.name}>
+                <ListItem key={game.name}>
                   <img src={game.image} alt={game.name}></img>
-                  <label>
-                    {game.name}
-                    {game.price}
-                  </label>
-                </li>
+                  <p>{game.name}</p>
+                  <p>${game.price}</p>
+                </ListItem>
               );
             })}
-          </ul>
+          </StyledList>
         </div>
       </header>
     </div>

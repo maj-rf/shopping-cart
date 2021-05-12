@@ -17,7 +17,8 @@ const Logo = styled.div`
   text-transform: uppercase;
   color: #fff;
   letter-spacing: 5px;
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: 700;
 `;
 
 const LinksWrapper = styled.div`

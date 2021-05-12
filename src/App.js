@@ -1,11 +1,6 @@
-import './App.css';
-import Home from './components/Home';
-function App() {
-  return (
-    <div className="App">
-      <Home />
-    </div>
-  );
-}
+import Routes from './components/Routes';
+const App = () => {
+  return <Routes />;
+};
 
 export default App;
