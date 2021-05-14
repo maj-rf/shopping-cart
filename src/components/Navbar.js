@@ -63,7 +63,7 @@ export default function Navbar(props) {
       <LinksWrapper>
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/shop">Shop</StyledLink>
-        <StyledLink to="/#">Cart ({props.orderNumber})</StyledLink>
+        <StyledLink to="/cart">Cart ({props.orderNumber})</StyledLink>
       </LinksWrapper>
       <div>
         <BurgerLines></BurgerLines>
