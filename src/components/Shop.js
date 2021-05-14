@@ -15,13 +15,15 @@ const ShopList = styled.ul`
 `;
 
 //---------End of Styled Components----------------//
-export default function Shop() {
+export default function Shop(props) {
   return (
     <ShopWrapper>
       <h1>This is the Shop page.</h1>
       <ShopList>
         {data.map((game) => {
-          return <ShopItem key={game.name} game={game} />;
+          return (
+            <ShopItem key={game.name} game={game} addItem={props.addItem} />
+          );
         })}
       </ShopList>
     </ShopWrapper>

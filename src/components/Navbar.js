@@ -56,14 +56,14 @@ const BurgerLines = styled.div`
   margin: 5px;
 `;
 //----------End of Styled Components--------------//
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <Nav>
       <Logo>Switcher</Logo>
       <LinksWrapper>
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/shop">Shop</StyledLink>
-        <StyledLink to="/#">Cart</StyledLink>
+        <StyledLink to="/#">Cart ({props.orderNumber})</StyledLink>
       </LinksWrapper>
       <div>
         <BurgerLines></BurgerLines>

@@ -25,6 +25,8 @@ const ShopItem = (props) => {
     });
   };
 
+  let name = props.game.name;
+
   return (
     <StyledItem>
       <img src={props.game.image} alt={props.game.name}></img>
@@ -34,7 +36,10 @@ const ShopItem = (props) => {
         <button onClick={increment}> + </button> {quantity}{' '}
         <button onClick={decrement}> - </button>
       </div>
-      <button> Add To Cart </button>
+      <button onClick={() => props.addItem(name, quantity)}>
+        {' '}
+        Add To Cart{' '}
+      </button>
     </StyledItem>
   );
 };
