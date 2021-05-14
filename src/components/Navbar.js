@@ -11,6 +11,9 @@ const Nav = styled.nav`
   color: white;
   font-size: 15px;
   min-height: 8vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 `;
 
 const Logo = styled.div`

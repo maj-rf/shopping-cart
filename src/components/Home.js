@@ -4,6 +4,10 @@ import data from '../helpers/data';
 import shuffle from '../helpers/shuffle';
 
 //---------------Styled Components-----------------//
+const HomeWrapper = styled.div`
+  background: #fff;
+`;
+
 const StyledList = styled.ul`
   display: flex;
   align-items: center;
@@ -14,6 +18,9 @@ const ListItem = styled.li`
   display: flex;
   flex-direction: column;
   list-style: none;
+  background: rgba(4, 217, 255);
+  padding: 5px;
+  border-radius: 20px;
 `;
 
 const Styledh1 = styled.h1`
@@ -25,7 +32,7 @@ const Styledh1 = styled.h1`
 export default function Home() {
   const [featuredGame] = useState(shuffle([...data])); //randomize Featured game
   return (
-    <div>
+    <HomeWrapper>
       <header>
         <Styledh1>Toss a coin to your Switcher!</Styledh1>
         <p>
@@ -47,6 +54,6 @@ export default function Home() {
           </StyledList>
         </div>
       </header>
-    </div>
+    </HomeWrapper>
   );
 }
