@@ -1,45 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
+import CartItem from './CartItem';
 
-const CartList = styled.ul`
+const StyledCartList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
 `;
-const StyledCartItem = styled.li`
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  list-style: none;
-  background: rgba(255, 7, 58);
-  padding: 5px;
-  border-radius: 20px;
-  width: 50vw;
-`;
 
 const Cart = (props) => {
+  const getGrandTotal = (array) => {
+    return array.reduce((a, b) => a + b.price * b.quantity, 0);
+  };
   return (
-    <CartList>
-      {props.cartItems.map((item) => {
+    <StyledCartList>
+      <button onClick={props.clearCart}>Clear Cart</button>
+      <div>Grant Total: {getGrandTotal(props.cartList)}</div>
+      {props.cartList.map((item) => {
         return (
-          <StyledCartItem key={item.name}>
-            <img src={item.image} alt={item.name}></img>
-            <div>
-              <p>{item.name}</p>
-              <p>${item.price}</p>
-              <p>Quantity: {item.quantity}</p>
-              <p>Total: ${(item.quantity * item.price).toFixed(2)}</p>
-            </div>
-            {/* <div>
-        <button onClick={increment}> + </button> {quantity}{' '}
-        <button onClick={decrement}> - </button>
-      </div> */}
-          </StyledCartItem>
+          <CartItem item={item} key={item.name} removeItem={props.removeItem} />
         );
       })}
-    </CartList>
+    </StyledCartList>
   );
 };
 
