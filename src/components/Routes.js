@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import GlobalStyle from './globalstyle';
 import Home from './Home';
 import Shop from './Shop';
@@ -45,8 +45,12 @@ const Routes = () => {
       <GlobalStyle />
       <Navbar orderNumber={cartList.length} />
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/shop" render={() => <Shop addItem={addItem} />} />
+        <Route exact path="/" component={Home} replace />
+        <Route
+          exact
+          path="/shop"
+          render={() => <Shop addItem={addItem} replace />}
+        />
         <Route
           exact
           path="/cart"
@@ -55,6 +59,7 @@ const Routes = () => {
               cartList={cartList}
               clearCart={clearCart}
               removeItem={removeItem}
+              replace
             />
           )}
         />

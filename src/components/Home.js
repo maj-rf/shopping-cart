@@ -81,7 +81,7 @@ const Styledh1 = styled.h1`
     border-radius: 5px;
     position: absolute;
     bottom: 5px;
-    margin: -5px;
+    margin: 10px auto;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -90,6 +90,11 @@ const Styledh1 = styled.h1`
     text-align: center;
     margin: 10px;
     line-height: 50px;
+
+    &::after {
+      bottom: 0;
+      margin: 0 auto;
+    }
   }
 `;
 const StyledP = styled.p`
