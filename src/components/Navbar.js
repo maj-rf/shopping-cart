@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
+import { FaShoppingCart } from 'react-icons/fa';
 //---------Styled Components----------------//
 const LinksWrapper = styled.ul`
   display: flex;
@@ -61,7 +61,7 @@ const Nav = styled.nav`
     ${LinksWrapper} {
       display: block;
       position: absolute;
-      top: 68px;
+      top: 70px;
       right: 0;
       height: auto;
       background: #333;
@@ -69,26 +69,49 @@ const Nav = styled.nav`
     ${StyledLink} {
       display: block;
     }
+    ${StyledLink}.hidden {
+      display: none;
+    }
     ${BurgerMenu} {
       position: relative;
       display: block;
+      cursor: pointer;
+    }
+    ${BurgerLines}.hidden {
+      background: #fff;
+    }
+    ${BurgerLines} {
+      background: red;
     }
   }
 `;
 //----------End of Styled Components--------------//
 export default function Navbar(props) {
+  const [showLinks, setShowLinks] = useState(false);
   return (
     <Nav>
       <Logo>Switcher</Logo>
-      <LinksWrapper>
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/shop">Shop</StyledLink>
+      <LinksWrapper onMouseEnter={() => setShowLinks((prevState) => prevState = true)} onMouseLeave={() => setShowLinks((prevState) => prevState = false)}>
+        <StyledLink
+          className={showLinks ? '' : 'hidden'}
+          to="/"
+        >
+          Home
+        </StyledLink>
+        <StyledLink
+          className={showLinks ? '' : 'hidden'}
+          to="/shop"
+        >
+          Shop
+        </StyledLink>
       </LinksWrapper>
-      <StyledLink to="/cart">Cart ({props.orderNumber})</StyledLink>
-      <BurgerMenu>
-        <BurgerLines></BurgerLines>
-        <BurgerLines></BurgerLines>
-        <BurgerLines></BurgerLines>
+      <StyledLink to="/cart">
+        <FaShoppingCart />({props.orderNumber})
+      </StyledLink>
+      <BurgerMenu onMouseEnter={() => setShowLinks((prevState) => prevState = true)}>
+        <BurgerLines className={showLinks ? '' : 'hidden'}></BurgerLines>
+        <BurgerLines className={showLinks ? '' : 'hidden'}></BurgerLines>
+        <BurgerLines className={showLinks ? '' : 'hidden'}></BurgerLines>
       </BurgerMenu>
     </Nav>
   );

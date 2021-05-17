@@ -14,6 +14,7 @@ const Routes = () => {
 
   const addItem = (image, name, price, quantity) => {
     let list = Object.assign([], cartList);
+    if (quantity === 0) return;
     //check if cartItem already exists and only update quantity if added again
     if (list.some((item) => item.name === name)) {
       let itemIndex = list.findIndex((item) => item.name === name);
@@ -43,7 +44,7 @@ const Routes = () => {
   return (
     <Router>
       <GlobalStyle />
-      <Navbar orderNumber={cartList.length} />
+      <Navbar orderNumber={cartList.reduce((a, b) => a + b.quantity, 0)} />
       <Switch>
         <Route exact path="/" component={Home} replace />
         <Route

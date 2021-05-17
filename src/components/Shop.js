@@ -22,6 +22,11 @@ const ShopList = styled.ul`
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
+
+  @media only screen and (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 //---------End of Styled Components----------------//

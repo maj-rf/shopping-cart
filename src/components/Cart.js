@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import CartItem from './CartItem';
 const CartWrapper = styled.div`
-  min-height: 600px;
+  min-height: 800px;
   background: #bdc3c7; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to bottom,
@@ -22,6 +22,14 @@ const StyledCartList = styled.ul`
   justify-content: space-evenly;
   flex-wrap: wrap;
 `;
+const CartMessage = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  color: #fff;
+  margin-top: 300px;
+`;
 
 const Cart = (props) => {
   const getGrandTotal = (array) => {
@@ -29,19 +37,25 @@ const Cart = (props) => {
   };
   return (
     <CartWrapper>
-      <StyledCartList>
-        <button onClick={props.clearCart}>Clear Cart</button>
-        <div>Grant Total: {getGrandTotal(props.cartList)}</div>
-        {props.cartList.map((item) => {
-          return (
-            <CartItem
-              item={item}
-              key={item.name}
-              removeItem={props.removeItem}
-            />
-          );
-        })}
-      </StyledCartList>
+      {props.cartList.length ? (
+        <StyledCartList>
+          <button onClick={props.clearCart}>Clear Cart</button>
+          <div>Grand Total: {getGrandTotal(props.cartList)}</div>
+          {props.cartList.map((item) => {
+            return (
+              <CartItem
+                item={item}
+                key={item.name}
+                removeItem={props.removeItem}
+              />
+            );
+          })}
+        </StyledCartList>
+      ) : (
+        <StyledCartList>
+          <CartMessage> There's nothing in your Cart yet. </CartMessage>
+        </StyledCartList>
+      )}
     </CartWrapper>
   );
 };

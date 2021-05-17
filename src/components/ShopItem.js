@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
+import { AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
 const StyledItem = styled.li`
   display: flex;
   flex-direction: column;
@@ -8,10 +8,54 @@ const StyledItem = styled.li`
   background: rgba(255, 7, 58);
   padding: 5px;
   border-radius: 20px;
-`;
+  transition: transform 0.5s;
 
+  &:hover {
+    transform: translateY(-5px);
+  }
+`;
+const AddButton = styled(AiFillPlusCircle)`
+  color: white;
+  cursor: pointer;
+  transform: scale(1.5);
+  &:hover {
+    color: black;
+  }
+`;
+const MinusButton = styled(AiFillMinusCircle)`
+  color: white;
+  cursor: pointer;
+  transform: scale(1.5);
+  &:hover {
+    color: black;
+  }
+`;
+const AddToCart = styled.button`
+  max-width: 150px;
+  margin: 0 auto;
+  color: #494949;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  padding: 5px;
+  border: 3px solid #494949;
+  transition: all 0.4s;
+  cursor: pointer;
+
+  &:hover {
+    color: #ffffff;
+    background: #494949;
+    border-color: #ffffff;
+    transition: all 0.4s ease 0s;
+  }
+`;
 const ShopItem = (props) => {
   const [quantity, setQuantity] = useState(0);
+
+  const handleChange = (e) => {
+    setQuantity((prevState) => (prevState = parseInt(e.target.value)));
+    e.preventDefault();
+  };
 
   const increment = () => {
     setQuantity((prevState) => {
@@ -35,13 +79,16 @@ const ShopItem = (props) => {
       <p>{props.game.name}</p>
       <p>${props.game.price}</p>
       <div>
-        <button onClick={increment}> + </button> {quantity}{' '}
-        <button onClick={decrement}> - </button>
+        <AddButton onClick={increment}></AddButton>{' '}
+        <form>
+          <input onChange={handleChange} type="number" value={quantity}></input>
+        </form>
+        <MinusButton onClick={decrement}> - </MinusButton>
       </div>
-      <button onClick={() => props.addItem(image, name, price, quantity)}>
+      <AddToCart onClick={() => props.addItem(image, name, price, quantity)}>
         {' '}
         Add To Cart{' '}
-      </button>
+      </AddToCart>
     </StyledItem>
   );
 };

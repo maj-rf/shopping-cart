@@ -23,7 +23,8 @@ Technologies:
 
 - React using `create-react-app`
 - React Router using `react-router-dom`
-- Styled Components
+- Styled Components using `styled-components`
+- React Icons using `react-icons`
 
 Sources:
 
