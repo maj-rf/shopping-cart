@@ -13,7 +13,7 @@ const StyledCartItem = styled.li`
   margin-top: 15px;
   min-width: 600px;
   @media only screen and (max-width: 800px) {
-    min-width: 400px;
+    min-width: 393px;
   }
 `;
 
