@@ -92,8 +92,8 @@ export default function Navbar(props) {
     <Nav>
       <Logo>Switcher</Logo>
       <LinksWrapper
-        onMouseEnter={() => setShowLinks((prevState) => (prevState = true))}
-        onMouseLeave={() => setShowLinks((prevState) => (prevState = false))}
+        onMouseEnter={() => setShowLinks(true)}
+        onMouseLeave={() => setShowLinks(false)}
       >
         <StyledLink className={showLinks ? '' : 'hidden'} to="/">
           Home
