@@ -86,7 +86,9 @@ const Cart = (props) => {
               Check-Out
             </StyledCartButton>
           </div>
-          <TotalDiv>Grand Total: ${getGrandTotal(props.cartList)}</TotalDiv>
+          <TotalDiv>
+            Grand Total: ${getGrandTotal(props.cartList).toFixed(2)}
+          </TotalDiv>
         </StyledCartList>
       ) : (
         <StyledCartList>

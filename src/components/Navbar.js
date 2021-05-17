@@ -105,10 +105,7 @@ export default function Navbar(props) {
       <StyledLink to="/cart">
         <FaShoppingCart />({props.orderNumber})
       </StyledLink>
-      <BurgerMenu
-        onMouseEnter={() => setShowLinks((prevState) => (prevState = true))}
-        onClick={() => setShowLinks((prevState) => !prevState)}
-      >
+      <BurgerMenu onClick={() => setShowLinks((prevState) => !prevState)}>
         <BurgerLines className={showLinks ? '' : 'hidden'}></BurgerLines>
         <BurgerLines className={showLinks ? '' : 'hidden'}></BurgerLines>
         <BurgerLines className={showLinks ? '' : 'hidden'}></BurgerLines>
