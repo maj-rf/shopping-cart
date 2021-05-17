@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import GlobalStyle from './globalstyle';
 import Home from './Home';
-import Shop from './Shop';
-import Cart from './Cart';
+import Shop from './ShopFolder/Shop';
+import Cart from './CartFolder/Cart';
 import Navbar from './Navbar';
-
+import ScrollToTop from '../helpers/ScrollToTop';
 const Routes = () => {
   const [cartList, setCartList] = useState([]);
   useEffect(() => {
@@ -14,7 +14,7 @@ const Routes = () => {
 
   const addItem = (image, name, price, quantity) => {
     let list = Object.assign([], cartList);
-    if (quantity === 0) return;
+    if (quantity === 0 || isNaN(quantity)) return;
     //check if cartItem already exists and only update quantity if added again
     if (list.some((item) => item.name === name)) {
       let itemIndex = list.findIndex((item) => item.name === name);
@@ -43,6 +43,7 @@ const Routes = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <GlobalStyle />
       <Navbar orderNumber={cartList.reduce((a, b) => a + b.quantity, 0)} />
       <Switch>

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import data from '../helpers/data';
+import data from '../../helpers/data';
 import ShopItem from './ShopItem';
 //---------------Styled Components-----------------//
 const ShopWrapper = styled.div`
@@ -33,7 +33,6 @@ const ShopList = styled.ul`
 export default function Shop(props) {
   return (
     <ShopWrapper>
-      <h1>This is the Shop page.</h1>
       <ShopList>
         {data.map((game) => {
           return (

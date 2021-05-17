@@ -49,6 +49,9 @@ const AddToCart = styled.button`
     transition: all 0.4s ease 0s;
   }
 `;
+const StyledInput = styled.input`
+  width: 75px;
+`;
 const ShopItem = (props) => {
   const [quantity, setQuantity] = useState(0);
 
@@ -80,9 +83,11 @@ const ShopItem = (props) => {
       <p>${props.game.price}</p>
       <div>
         <AddButton onClick={increment}></AddButton>{' '}
-        <form>
-          <input onChange={handleChange} type="number" value={quantity}></input>
-        </form>
+        <StyledInput
+          onChange={handleChange}
+          type="number"
+          value={quantity}
+        ></StyledInput>{' '}
         <MinusButton onClick={decrement}> - </MinusButton>
       </div>
       <AddToCart onClick={() => props.addItem(image, name, price, quantity)}>

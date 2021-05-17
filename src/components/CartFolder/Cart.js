@@ -30,6 +30,31 @@ const CartMessage = styled.div`
   color: #fff;
   margin-top: 300px;
 `;
+const TotalDiv = styled(CartMessage)`
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 auto;
+  color: black;
+`;
+const StyledCartButton = styled.button`
+  max-width: 150px;
+  margin: 15px auto;
+  color: #494949;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  padding: 5px;
+  border: 3px solid #494949;
+  transition: all 0.4s;
+  cursor: pointer;
+
+  &:hover {
+    color: #ffffff;
+    background: ${(props) => (props.check ? 'red' : '#494949')};
+    border-color: #ffffff;
+    transition: all 0.4s ease 0s;
+  }
+`;
 
 const Cart = (props) => {
   const getGrandTotal = (array) => {
@@ -39,8 +64,6 @@ const Cart = (props) => {
     <CartWrapper>
       {props.cartList.length ? (
         <StyledCartList>
-          <button onClick={props.clearCart}>Clear Cart</button>
-          <div>Grand Total: {getGrandTotal(props.cartList)}</div>
           {props.cartList.map((item) => {
             return (
               <CartItem
@@ -50,6 +73,20 @@ const Cart = (props) => {
               />
             );
           })}
+          <div>
+            <StyledCartButton onClick={props.clearCart}>
+              Clear Cart
+            </StyledCartButton>
+            <StyledCartButton
+              check
+              onClick={() =>
+                alert('*cue Never Gonna Give You Up* You just got Rickrolled!')
+              }
+            >
+              Check-Out
+            </StyledCartButton>
+          </div>
+          <TotalDiv>Grand Total: ${getGrandTotal(props.cartList)}</TotalDiv>
         </StyledCartList>
       ) : (
         <StyledCartList>

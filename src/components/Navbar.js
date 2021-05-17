@@ -91,24 +91,24 @@ export default function Navbar(props) {
   return (
     <Nav>
       <Logo>Switcher</Logo>
-      <LinksWrapper onMouseEnter={() => setShowLinks((prevState) => prevState = true)} onMouseLeave={() => setShowLinks((prevState) => prevState = false)}>
-        <StyledLink
-          className={showLinks ? '' : 'hidden'}
-          to="/"
-        >
+      <LinksWrapper
+        onMouseEnter={() => setShowLinks((prevState) => (prevState = true))}
+        onMouseLeave={() => setShowLinks((prevState) => (prevState = false))}
+      >
+        <StyledLink className={showLinks ? '' : 'hidden'} to="/">
           Home
         </StyledLink>
-        <StyledLink
-          className={showLinks ? '' : 'hidden'}
-          to="/shop"
-        >
+        <StyledLink className={showLinks ? '' : 'hidden'} to="/shop">
           Shop
         </StyledLink>
       </LinksWrapper>
       <StyledLink to="/cart">
         <FaShoppingCart />({props.orderNumber})
       </StyledLink>
-      <BurgerMenu onMouseEnter={() => setShowLinks((prevState) => prevState = true)}>
+      <BurgerMenu
+        onMouseEnter={() => setShowLinks((prevState) => (prevState = true))}
+        onClick={() => setShowLinks((prevState) => !prevState)}
+      >
         <BurgerLines className={showLinks ? '' : 'hidden'}></BurgerLines>
         <BurgerLines className={showLinks ? '' : 'hidden'}></BurgerLines>
         <BurgerLines className={showLinks ? '' : 'hidden'}></BurgerLines>
