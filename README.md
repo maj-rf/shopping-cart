@@ -15,7 +15,9 @@ A Simple Shopping Cart App to simulate an online shopping experience.
 
 ## Objectives and Outcomes
 
-TBA
+- Apply React Router to a multi-page Shopping Cart Application. The two previous projects were single page apps only so this project was a bit hard for me. Made use of `Links`, `Router`, and `Hash Router` and successfully applied them.
+- Learn and apply Styled Components. First time to use Styled Components. It is so fun and I think I am gonna stick with this one for the mean time.
+- Make use of the previously learned React Hooks like useState and useEffect. I rarely used useEffect on this project but it became very handy in the ScrollToTop helper. useState is a given and I really love the "stateful" thinking in React.
 
 ## Development
 
