@@ -4,6 +4,8 @@ import data from '../../helpers/data';
 import ShopItem from './ShopItem';
 //---------------Styled Components-----------------//
 const ShopWrapper = styled.div`
+  height: 100%;
+  margin-top: -20px;
   background: #bdc3c7; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to bottom,

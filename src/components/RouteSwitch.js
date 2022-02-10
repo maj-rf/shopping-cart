@@ -6,6 +6,7 @@ import Shop from './ShopFolder/Shop';
 import Cart from './CartFolder/Cart';
 import Navbar from './Navbar';
 import ScrollToTop from '../helpers/ScrollToTop';
+
 const RouteSwitch = () => {
   const [cartList, setCartList] = useState([]);
   useEffect(() => {

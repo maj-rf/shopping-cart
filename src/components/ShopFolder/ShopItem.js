@@ -53,7 +53,7 @@ const StyledInput = styled.input`
   width: 75px;
 `;
 const ShopItem = (props) => {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
   const handleChange = (e) => {
     setQuantity((prevState) => (prevState = parseInt(e.target.value)));
