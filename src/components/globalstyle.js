@@ -2,23 +2,13 @@ import { createGlobalStyle } from 'styled-components';
 // for global styling
 const GlobalStyle = createGlobalStyle`
 
-html,
-body {
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  padding: 0;
+* {
   margin: 0;
-  height: 100%;
-  width: 100%;
-  overflow-wrap: break-word;
+  padding: 0;
+  font-family: Poppins, sans-serif;
   font-size: 16px;
+  box-sizing: border-box;
   text-align: center;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
 }
 `;
 

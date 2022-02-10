@@ -61,7 +61,7 @@ const Nav = styled.nav`
     ${LinksWrapper} {
       display: block;
       position: absolute;
-      top: 50px;
+      top: 68px;
       right: 0;
       height: auto;
       background: #333;
