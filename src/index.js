@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import RouteSwitch from './components/RouteSwitch';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RouteSwitch />
   </React.StrictMode>,
   document.getElementById('root')
 );

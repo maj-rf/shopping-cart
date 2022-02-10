@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import GlobalStyle from './globalstyle';
 import Home from './Home';
 import Shop from './ShopFolder/Shop';
 import Cart from './CartFolder/Cart';
 import Navbar from './Navbar';
 import ScrollToTop from '../helpers/ScrollToTop';
-const Routes = () => {
+const RouteSwitch = () => {
   const [cartList, setCartList] = useState([]);
   useEffect(() => {
     console.log(cartList);
@@ -42,32 +42,28 @@ const Routes = () => {
   };
 
   return (
-    <Router>
+    <BrowserRouter>
       <ScrollToTop />
       <GlobalStyle />
       <Navbar orderNumber={cartList.reduce((a, b) => a + b.quantity, 0)} />
-      <Switch>
-        <Route exact path="/" component={Home} replace />
-        <Route
-          exact
-          path="/shop"
-          render={() => <Shop addItem={addItem} replace />}
-        />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route exact path="/shop" element={<Shop addItem={addItem} />} />
         <Route
           exact
           path="/cart"
-          render={() => (
+          element={
             <Cart
               cartList={cartList}
               clearCart={clearCart}
               removeItem={removeItem}
               replace
             />
-          )}
+          }
         />
-      </Switch>
-    </Router>
+      </Routes>
+    </BrowserRouter>
   );
 };
 
-export default Routes;
+export default RouteSwitch;
