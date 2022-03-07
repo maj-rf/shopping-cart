@@ -4,7 +4,11 @@ The Shopping Cart Project for The Odin Project!
 
 ## Overview
 
+![Imgur](https://i.imgur.com/vkm5ZAF.png)
+
 A Simple Shopping Cart App to simulate an online shopping experience.
+
+[Live Preview Here](https://bananabread08.github.io/shopping-cart/)
 
 ## Features
 
