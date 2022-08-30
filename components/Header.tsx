@@ -1,0 +1,22 @@
+import Link from 'next/link';
+import styles from '../styles/layout.module.css';
+
+export default function Header() {
+  return (
+    <header className={styles.header}>
+      <nav>
+        <ul className={styles.links}>
+          <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
+            <Link href="/shop">Shop</Link>
+          </li>
+          <li>
+            <Link href="/cart">Cart</Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
+}

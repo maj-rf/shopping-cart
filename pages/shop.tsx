@@ -2,20 +2,18 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Layout from '../components/Layout';
 
-const Home: NextPage = () => {
+const Shop: NextPage = () => {
   return (
     <Layout>
       <Head>
         <title>Home</title>
-        <meta name="description" content="Switcher Shopping Cart" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Shoping Page of Switcher" />
       </Head>
-
       <div>
-        <h1>Switcher</h1>
+        <h1>Shop</h1>
       </div>
     </Layout>
   );
 };
 
-export default Home;
+export default Shop;
