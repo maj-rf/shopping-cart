@@ -1,19 +1,15 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Layout from '../components/Layout';
+import AppHead from '../components/AppHead';
 
 const Home: NextPage = () => {
   return (
     <Layout>
-      <Head>
-        <title>Home</title>
-        <meta name="description" content="Switcher Shopping Cart" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <div>
+      <AppHead title="Home" content="Switcher Shopping Cart" />
+      <section>
         <h1>Switcher</h1>
-      </div>
+      </section>
     </Layout>
   );
 };

@@ -1,10 +1,11 @@
 import Link from 'next/link';
-import styles from '../styles/layout.module.css';
+import styles from '../styles/header.module.css';
 
 export default function Header() {
   return (
     <header className={styles.header}>
-      <nav>
+      <nav className={styles.nav}>
+        <h1>SWITCHER</h1>
         <ul className={styles.links}>
           <li>
             <Link href="/">Home</Link>
