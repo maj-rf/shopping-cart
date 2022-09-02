@@ -1,15 +1,18 @@
 import Layout from '../../components/Layout';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 export default function Item() {
+  const router = useRouter();
+  const itemId = router.query.itemid;
   return (
-    <Layout>
+    <>
       <Head>
-        <title>Item Name</title>
+        <title>{itemId}</title>
       </Head>
       <article>
-        <h2>Item Name</h2>
+        <h2>Item: {itemId}</h2>
       </article>
-    </Layout>
+    </>
   );
 }
