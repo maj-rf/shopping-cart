@@ -13,6 +13,7 @@ body {
 
 body {
   min-height: 100vh;
+  line-height: 1.6;
 }
 
 *,
@@ -36,6 +37,10 @@ li {
 a {
   color: #0070f3;
   text-decoration: none;
+}
+
+img {
+  max-width: 100%;
 }
 
 /* a:hover {

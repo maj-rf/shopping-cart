@@ -14,7 +14,7 @@ export const Navbar = () => {
   };
 
   return (
-    <header>
+    <header className={styles.header}>
       <nav className={styles.navbar}>
         <div className={styles.logo}>SWITCHER</div>
         <div className={styles.burger}>
