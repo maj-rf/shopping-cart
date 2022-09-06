@@ -1,5 +1,6 @@
 import { ShopItem } from '../data/data';
 import { ChangeEvent, useState } from 'react';
+import styles from '../styles/item.module.css';
 
 type InputProps = {
   name?: string;
@@ -34,10 +35,12 @@ export const Item = ({ name, image, price }: ShopItem) => {
   };
 
   return (
-    <div>
+    <div className={styles.item_container}>
       <img src={image} alt={name} />
-      <p>{name}</p>
-      <span>{price}</span>
+      <div className={styles.details}>
+        <p>{name}</p>
+        <span>{price}</span>
+      </div>
       <form>
         <button type="button" onClick={increment}>
           {' '}
