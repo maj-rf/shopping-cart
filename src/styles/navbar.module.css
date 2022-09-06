@@ -3,6 +3,8 @@
   justify-content: space-around;
   align-items: center;
   background-color: aliceblue;
+  padding: 0.7rem 0;
+  position: relative;
 }
 
 .logo {
@@ -20,9 +22,49 @@
 
 .links {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  width: 50%;
+  height: 100vh;
+  display: none;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  background-color: aliceblue;
+  /* display: flex;
+  justify-content: space-between; */
 }
 
 .link {
   padding: 1rem;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.showLinks {
+  display: flex;
+}
+
+.hideLinks {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  .navbar {
+    padding: 0;
+  }
+  .burger {
+    display: none;
+  }
+  .links {
+    position: relative;
+    width: unset;
+    height: unset;
+    top: unset;
+    right: unset;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
