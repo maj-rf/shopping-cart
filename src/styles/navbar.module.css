@@ -1,0 +1,28 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: aliceblue;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: -webkit-linear-gradient(
+    rgb(0, 0, 0),
+    rgb(4, 0, 89),
+    rgb(4, 100, 200),
+    rgb(255, 255, 255)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.link {
+  padding: 1rem;
+}
