@@ -1,11 +1,11 @@
 import { Hero } from '../components/Hero';
-import util_styles from '../styles/utils.module.css';
+import { Footer } from '../components/Footer';
 
 export const Home = () => {
   return (
-    <div className={util_styles.container}>
-      <h1>Hello</h1>
+    <div>
       <Hero />
+      <Footer />
     </div>
   );
 };

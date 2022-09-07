@@ -1,0 +1,25 @@
+.footer_container {
+  display: grid;
+  text-align: left;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  place-items: center;
+  padding: 2rem;
+  gap: 1rem;
+  min-height: 50vh;
+  background-color: azure;
+}
+
+h2 {
+  background: -webkit-linear-gradient(
+    rgb(0, 0, 0),
+    rgb(4, 0, 89),
+    rgb(4, 100, 200),
+    rgb(255, 255, 255)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer_item {
+  min-width: 300px;
+}
