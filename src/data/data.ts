@@ -18,7 +18,7 @@ export const data: ShopItem[] = [
   { name: 'Monster Hunter Rise', image: mhrise, price: 59.99, quantity: 1 },
   { name: 'Octopath Traveler', image: octopath, price: 49.99, quantity: 1 },
   {
-    name: 'Pokemon Sword + Shield Double Pack',
+    name: 'Pokemon SWSH Double Pack',
     image: pkmnswsh,
     price: 119.99,
     quantity: 1,
