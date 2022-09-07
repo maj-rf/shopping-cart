@@ -1,5 +1,19 @@
 .details {
   margin-inline: auto;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
+}
+
+.item_img {
+  transition: all 0.5s ease;
+  vertical-align: middle;
+}
+
+.item_img:hover {
+  scale: 1.2;
+}
+
+.img_container {
+  display: inline-block; /* change the default display type to inline-block */
+  overflow: hidden;
 }

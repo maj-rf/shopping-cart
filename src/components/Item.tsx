@@ -36,7 +36,9 @@ export const Item = ({ name, image, price }: ShopItem) => {
 
   return (
     <div className={styles.item_container}>
-      <img src={image} alt={name} />
+      <div className={styles.img_container}>
+        <img className={styles.item_img} src={image} alt={name} />
+      </div>
       <div className={styles.details}>
         <p>{name}</p>
         <span>{price}</span>
