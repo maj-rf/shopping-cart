@@ -1,5 +1,8 @@
+@value dark, light-100 from 'global.css';
+
 .container {
   min-height: calc(100vh - 3.62rem);
-  background-color: beige;
+  background-color: dark;
   padding: 1rem;
+  color: light-100;
 }

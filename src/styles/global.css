@@ -1,6 +1,13 @@
 @import-normalize;
 
-html,
+@value dark: #2C3333;
+@value navy-100: #395B64;
+@value teal-200: #A5C9CA;
+@value teal-100: #E7F6F2;
+@value darker: #171717;
+@value crimson-100: #DA0037;
+@value light-100: #EDEDED;
+
 body {
   scroll-behavior: smooth;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -34,8 +41,9 @@ li {
 }
 
 a {
-  color: #0070f3;
+  color: light-100;
   text-decoration: none;
+  display: block;
 }
 
 img {
