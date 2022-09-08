@@ -5,13 +5,20 @@ import styles from '../styles/item.module.css';
 type InputProps = {
   name?: string;
   value: string | number;
-  type?: string;
-  min?: string;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  type: string;
+  min: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 function InputElement(props: InputProps) {
-  return <input type={props.type} value={props.value} min={props.min}></input>;
+  return (
+    <input
+      type={props.type}
+      value={props.value}
+      onChange={props.onChange}
+      min={props.min}
+    ></input>
+  );
 }
 
 export const Item = ({ name, image, price }: ShopItem) => {
