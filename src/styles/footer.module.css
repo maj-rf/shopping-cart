@@ -5,13 +5,12 @@
   text-align: left;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   place-items: center;
-  padding: 2rem;
   gap: 1rem;
-  min-height: 50vh;
   background-color: darker;
 }
 
 h2 {
+  border-left: 0.5rem ridge white;
   background-image: linear-gradient(60deg, #e21143, #ffb03a);
   background-clip: text;
   color: transparent;

@@ -1,6 +1,10 @@
 @value dark, navy-100, teal-200, teal-100, darker, crimson-100, light-100 from 'global.css';
 
 .header {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -o-sticky;
+  position: -ms-sticky;
   position: sticky;
   top: 0px;
   z-index: 2;
@@ -31,16 +35,17 @@
   height: 100vh;
   position: absolute;
   top: 3.6rem;
-  right: -100%;
+  right: 0;
+  visibility: hidden;
+  transform: translate(-100%);
   background-color: darker;
-  transition: all 0.5s ease-in-out;
 }
 
 .link {
   padding: 1rem;
   text-transform: uppercase;
   font-weight: 700;
-  transition: all 0.3s ease-in;
+  transition: all 0.1s ease-in;
 }
 
 .link:hover {
@@ -54,16 +59,19 @@
 }
 
 .showLinks {
-  right: 0;
+  transform: translateX(0);
+  visibility: visible;
+  transition: all 0.5s ease-in;
 }
 
 .hideLinks {
-  right: -100%;
+  visibility: hidden;
 }
 
 @media screen and (min-width: 800px) {
   .navbar {
     padding: 0;
+    margin: 0;
   }
   .burger {
     display: none;
@@ -78,5 +86,8 @@
     flex-direction: row;
     justify-content: space-between;
     box-shadow: unset;
+    transform: unset;
+    transition: unset;
+    visibility: visible;
   }
 }
