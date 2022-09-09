@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from '../styles/navbar.module.css';
+import { useShoppingCart } from './context/CartContext';
 import { NaviLink } from './NaviLink';
 
 export const Navbar = () => {
@@ -13,12 +14,15 @@ export const Navbar = () => {
     setShowLinks(false);
   };
 
+  const { cartItems } = useShoppingCart();
+
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
         <div className={styles.logo}>SWITCHER</div>
         <div className={styles.burger}>
           <button onClick={changeVisibility}> [=] </button>
+          {/* <span>{cartItems.length}</span> */}
         </div>
         <ul
           className={`${styles.links} ${
@@ -26,17 +30,13 @@ export const Navbar = () => {
           }`}
         >
           <NaviLink path="/" hide={hide} name="Home" />
-          {/* <NavLink
-              to="/"
-              onClick={changeVisibility}
-              style={({ isActive }): any =>
-                isActive ? activeStyle : undefined
-              }
-            >
-              Home
-            </NavLink> */}
           <NaviLink path="/shop" hide={hide} name="Shop" />
-          <NaviLink path="/cart" hide={hide} name="Cart" />
+          <NaviLink
+            path="/cart"
+            hide={hide}
+            name="Cart"
+            cartItems={cartItems.length}
+          />
         </ul>
       </nav>
     </header>

@@ -4,9 +4,10 @@ type NavProps = {
   path: string;
   hide: () => void;
   name: string;
+  cartItems?: number;
 };
 
-export const NaviLink = ({ path, hide, name }: NavProps) => {
+export const NaviLink = ({ path, hide, name, cartItems }: NavProps) => {
   let activeStyle = {
     textDecoration: 'underline',
   };
@@ -18,7 +19,7 @@ export const NaviLink = ({ path, hide, name }: NavProps) => {
         onClick={hide}
         style={({ isActive }): any => (isActive ? activeStyle : undefined)}
       >
-        {name}
+        {name} {cartItems}
       </NavLink>
     </li>
   );

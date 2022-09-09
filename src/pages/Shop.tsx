@@ -10,7 +10,8 @@ export const Shop = () => {
         {data.map((item) => {
           return (
             <Item
-              key={item.name + item.price}
+              key={item.id}
+              id={item.id}
               name={item.name}
               image={item.image}
               price={item.price}
