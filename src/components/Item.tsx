@@ -1,45 +1,9 @@
-import { ShopItem } from '../data/data';
-import { ChangeEvent, useState } from 'react';
+import { ShopItem } from './types/type';
 import styles from '../styles/item.module.css';
+import { useShoppingCart } from './context/CartContext';
 
-type InputProps = {
-  name?: string;
-  value: string | number;
-  type: string;
-  min: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-};
-
-function InputElement(props: InputProps) {
-  return (
-    <input
-      type={props.type}
-      value={props.value}
-      onChange={props.onChange}
-      min={props.min}
-    ></input>
-  );
-}
-
-export const Item = ({ name, image, price }: ShopItem) => {
-  const [quantity, setQuantity] = useState<number>(1);
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setQuantity((prevState) => (prevState = parseInt(e.target.value)));
-    e.preventDefault();
-  };
-
-  const increment = (): void => {
-    setQuantity((prevState) => {
-      return prevState + 1;
-    });
-  };
-
-  const decrement = (): void => {
-    setQuantity((prevState) => {
-      return prevState ? prevState - 1 : 0;
-    });
-  };
+export const Item = ({ name, id, image, price }: ShopItem) => {
+  const { increaseQuantity, removeItem, checkIfItemExists } = useShoppingCart();
 
   return (
     <div className={styles.item_container}>
@@ -50,22 +14,11 @@ export const Item = ({ name, image, price }: ShopItem) => {
         <p>{name}</p>
         <span>{price}</span>
       </div>
-      <form>
-        <button type="button" onClick={increment}>
-          {' '}
-          +{' '}
-        </button>{' '}
-        <InputElement
-          onChange={handleChange}
-          type="number"
-          value={quantity}
-          min="1"
-        />
-        <button type="button" onClick={decrement}>
-          {' '}
-          -{' '}
-        </button>
-      </form>
+      {checkIfItemExists(id) ? (
+        <button onClick={() => removeItem(id)}> Remove from Cart </button>
+      ) : (
+        <button onClick={() => increaseQuantity(id)}> + Add To Cart </button>
+      )}
     </div>
   );
 };
