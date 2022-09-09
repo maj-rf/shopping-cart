@@ -1,0 +1,50 @@
+@value darker, navy-100 from 'global.css';
+
+.hero_container {
+  padding: 3rem;
+  font-size: 1.1rem;
+}
+
+.hero_heading {
+  font-weight: 700;
+  background-image: linear-gradient(60deg, #e21143, #ffb03a);
+  background-clip: text;
+  background-size: 200% auto;
+  color: transparent;
+  animation: shine 1.5s linear infinite;
+}
+
+.hero_button {
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  background-color: navy-100;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0.3em 0.3em 0 0 darker;
+  transition: all 0.4s ease-in-out;
+}
+
+.hero_button:hover {
+  box-shadow: 0.7em 0.7em 0 0 darker;
+}
+
+.hero_button a {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .hero_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+  }
+}
