@@ -7,6 +7,8 @@
   place-items: center;
   gap: 1rem;
   background-color: darker;
+  min-height: unset;
+  padding: 5rem 0;
 }
 
 h2 {

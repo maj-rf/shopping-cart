@@ -1,3 +1,5 @@
+@value lightest from 'global.css';
+
 .feature {
   position: relative;
   background-size: cover;
@@ -13,6 +15,17 @@
   background-image: url(../assets/ssb.jpeg);
 }
 
+.acce {
+  background-image: url(../assets/acce.webp);
+}
+
+.feature h1 {
+  position: relative;
+  color: lightest;
+  font-size: clamp(3rem, 6vw + 1.5rem, 5rem);
+  line-height: 0.9;
+}
+
 .games::before {
   content: '';
   position: absolute;
@@ -21,17 +34,7 @@
   bottom: 0px;
   left: 0px;
   background-color: rgba(255, 33, 26, 0.6);
-}
-
-.feature h1 {
-  position: relative;
-  color: #ffffff;
-  font-size: clamp(3rem, 6vw + 1.5rem, 5rem);
-  line-height: 0.9;
-}
-
-.acce {
-  background-image: url(../assets/acce.webp);
+  transition: all 0.5s;
 }
 
 .acce::before {
@@ -42,4 +45,13 @@
   bottom: 0px;
   left: 0px;
   background-color: rgba(26, 76, 255, 0.6);
+  transition: all 0.5s;
+}
+
+.games:hover::before {
+  background-color: rgba(255, 33, 26, 0.3);
+}
+
+.acce:hover::before {
+  background-color: rgba(26, 76, 255, 0.3);
 }
