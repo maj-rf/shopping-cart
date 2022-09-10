@@ -42,10 +42,15 @@
 }
 
 .link {
-  padding: 1rem;
   text-transform: uppercase;
   font-weight: 700;
   transition: all 0.1s ease-in;
+}
+
+/* fill the parent of link*/
+.link a {
+  display: block;
+  padding: 1rem;
 }
 
 .link:hover {

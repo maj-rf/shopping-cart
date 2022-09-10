@@ -15,23 +15,12 @@
 }
 
 .hero_button {
-  padding: 1rem 1.5rem;
-  margin-bottom: 2rem;
-  background-color: navy-100;
-  border: none;
-  border-radius: 6px;
-  box-shadow: 0.3em 0.3em 0 0 darker;
-  transition: all 0.4s ease-in-out;
+  padding: 0;
 }
-
-.hero_button:hover {
-  box-shadow: 0.7em 0.7em 0 0 darker;
-}
-
+/* fill parent of link tag */
 .hero_button a {
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  font-weight: 700;
+  padding: 1rem 1.5rem;
+  display: block;
 }
 
 @keyframes shine {
