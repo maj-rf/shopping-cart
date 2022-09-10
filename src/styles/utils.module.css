@@ -1,8 +1,35 @@
-@value dark, light-100 from 'global.css';
+@value dark, light-100, darker, navy-100, crimson-100, orange-100 from 'global.css';
 
 .container {
-  min-height: calc(100vh - 3.62rem);
+  min-height: 100vh;
   background-color: dark;
   padding: 1rem;
+  color: light-100;
+}
+
+.common_btn {
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  background-color: navy-100;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0.3em 0.3em 0 0 darker;
+  transition: all 0.4s ease-in-out;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.common_btn:hover {
+  box-shadow: 0.6em 0.6em 0 0 darker;
+}
+
+.add {
+  background-color: orange-100;
+}
+
+.remove {
+  background-color: crimson-100;
   color: light-100;
 }

@@ -1,4 +1,4 @@
-@value darker, navy-100 from 'global.css';
+@value darker, navy-100, crimson-100, orange-100 from 'global.css';
 
 .hero_container {
   padding: 3rem;
@@ -7,7 +7,7 @@
 
 .hero_heading {
   font-weight: 700;
-  background-image: linear-gradient(60deg, #e21143, #ffb03a);
+  background-image: linear-gradient(60deg, crimson-100, orange-100);
   background-clip: text;
   background-size: 200% auto;
   color: transparent;

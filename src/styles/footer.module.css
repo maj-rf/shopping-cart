@@ -1,4 +1,4 @@
-@value darker, light-100 from 'global.css';
+@value darker, light-100, crimson-100, orange-100 from 'global.css';
 
 .footer_container {
   display: grid;
@@ -11,9 +11,9 @@
   padding: 5rem 0;
 }
 
-h2 {
+.footer_container h2 {
   border-left: 0.5rem ridge white;
-  background-image: linear-gradient(60deg, #e21143, #ffb03a);
+  background-image: linear-gradient(60deg, crimson-100, orange-100);
   background-clip: text;
   color: transparent;
 }
