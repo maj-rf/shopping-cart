@@ -13,7 +13,7 @@ export const Item = ({ name, id, image, price }: ShopItem) => {
       </div>
       <div className={styles.details}>
         <p>{name}</p>
-        <span>{price}</span>
+        <span>${price}</span>
       </div>
       {checkIfItemExists(id) ? (
         <button

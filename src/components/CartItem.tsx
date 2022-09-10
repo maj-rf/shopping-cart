@@ -2,6 +2,7 @@ import { data } from '../data/data';
 import { useShoppingCart } from './context/CartContext';
 import { CartItemType } from './types/type';
 import styles from '../styles/cartitem.module.css';
+import utils from '../styles/utils.module.css';
 
 export const CartItem = ({ id, quantity }: CartItemType) => {
   const { increaseQuantity, decreaseQuantity } = useShoppingCart();
@@ -12,13 +13,22 @@ export const CartItem = ({ id, quantity }: CartItemType) => {
       <img className={styles.item_img} src={item.image} alt={item.name} />
       <div>
         <p>{item.name}</p>
-        <span>{quantity}</span>
+        <p>{quantity}</p>
+        <p>${item.price}</p>
         <form>
-          <button type="button" onClick={() => increaseQuantity(id)}>
+          <button
+            className={`${utils.common_btn} ${utils.add}`}
+            type="button"
+            onClick={() => increaseQuantity(id)}
+          >
             {' '}
             +{' '}
           </button>{' '}
-          <button type="button" onClick={() => decreaseQuantity(id)}>
+          <button
+            className={`${utils.common_btn} ${utils.remove}`}
+            type="button"
+            onClick={() => decreaseQuantity(id)}
+          >
             {' '}
             -{' '}
           </button>
