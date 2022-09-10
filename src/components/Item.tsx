@@ -1,5 +1,6 @@
 import { ShopItem } from './types/type';
 import styles from '../styles/item.module.css';
+import utils from '../styles/utils.module.css';
 import { useShoppingCart } from './context/CartContext';
 
 export const Item = ({ name, id, image, price }: ShopItem) => {
@@ -15,9 +16,21 @@ export const Item = ({ name, id, image, price }: ShopItem) => {
         <span>{price}</span>
       </div>
       {checkIfItemExists(id) ? (
-        <button onClick={() => removeItem(id)}> Remove from Cart </button>
+        <button
+          className={`${utils.common_btn} ${utils.remove}`}
+          onClick={() => removeItem(id)}
+        >
+          {' '}
+          Remove from Cart{' '}
+        </button>
       ) : (
-        <button onClick={() => increaseQuantity(id)}> + Add To Cart </button>
+        <button
+          className={`${utils.common_btn} ${utils.add}`}
+          onClick={() => increaseQuantity(id)}
+        >
+          {' '}
+          + Add To Cart{' '}
+        </button>
       )}
     </div>
   );

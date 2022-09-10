@@ -17,7 +17,7 @@ export const Hero = () => {
           </p>
         </div>
       </div>
-      <button className={styles.hero_button}>
+      <button className={utils.common_btn}>
         <Link to="/shop">Shop Now</Link>
       </button>
     </section>

@@ -1,11 +1,11 @@
 import { CartItem } from '../components/CartItem';
 import { useShoppingCart } from '../components/context/CartContext';
-
+import utils from '../styles/utils.module.css';
 export const Cart = () => {
   const { cartItems } = useShoppingCart();
   return (
-    <div>
-      <h1>Cart</h1>
+    <div className={utils.container}>
+      <h1>Your Shopping Cart</h1>
       <p>Number of Items: {cartItems.length}</p>
       <div>
         {cartItems.map((item) => {
