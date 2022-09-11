@@ -20,7 +20,7 @@ export const CartItem = ({
         <p>${item.price}</p>
         <form>
           <button
-            className={`${utils.common_btn} ${utils.add}`}
+            className={`${utils.common_btn} ${utils.add} ${styles.mg_right}`}
             type="button"
             onClick={() => increaseQuantity(id)}
           >
