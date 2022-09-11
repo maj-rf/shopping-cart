@@ -4,7 +4,10 @@ import { CartItemType } from './types/type';
 import styles from '../styles/cartitem.module.css';
 import utils from '../styles/utils.module.css';
 
-export const CartItem = ({ id, quantity }: CartItemType) => {
+export const CartItem = ({
+  id,
+  quantity,
+}: CartItemType): JSX.Element | null => {
   const { increaseQuantity, decreaseQuantity } = useShoppingCart();
   const item = data.find((x) => x.id === id);
   if (item == null) return null;

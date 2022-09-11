@@ -1,7 +1,7 @@
-import styles from '../styles/footer.module.css';
-import utils from '../styles/utils.module.css';
+import styles from '../../styles/footer.module.css';
+import utils from '../../styles/utils.module.css';
 
-export const Footer = () => {
+export const Footer = (): JSX.Element => {
   return (
     <section className={`${utils.container} ${styles.footer_container}`}>
       <div className={styles.footer_item}>

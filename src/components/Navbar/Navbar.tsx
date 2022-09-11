@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import styles from '../styles/navbar.module.css';
-import { useShoppingCart } from './context/CartContext';
+import styles from '../../styles/navbar.module.css';
+import { useShoppingCart } from '../context/CartContext';
 import { NaviLink } from './NaviLink';
 
 export const Navbar = () => {

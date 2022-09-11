@@ -1,6 +1,6 @@
-import styles from '../styles/feature.module.css';
+import styles from '../../styles/feature.module.css';
 
-export const Featured = () => {
+export const Featured = (): JSX.Element => {
   return (
     <section>
       <div className={`${styles.feature} ${styles.games}`}>

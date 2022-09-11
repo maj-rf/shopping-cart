@@ -3,7 +3,7 @@ import styles from '../styles/item.module.css';
 import utils from '../styles/utils.module.css';
 import { useShoppingCart } from './context/CartContext';
 
-export const Item = ({ name, id, image, price }: ShopItem) => {
+export const Item = ({ name, id, image, price }: ShopItem): JSX.Element => {
   const { increaseQuantity, removeItem, checkIfItemExists } = useShoppingCart();
 
   return (

@@ -1,7 +1,7 @@
 import { CartItem } from '../components/CartItem';
 import { useShoppingCart } from '../components/context/CartContext';
 import utils from '../styles/utils.module.css';
-export const Cart = () => {
+export const Cart = (): JSX.Element => {
   const { cartItems } = useShoppingCart();
   return (
     <div className={utils.container}>

@@ -2,7 +2,7 @@ import { data } from '../data/data';
 import { Item } from '../components/Item';
 import util_styles from '../styles/utils.module.css';
 import styles from '../styles/shop.module.css';
-export const Shop = () => {
+export const Shop = (): JSX.Element => {
   return (
     <div className={util_styles.container}>
       <h1>Shop</h1>

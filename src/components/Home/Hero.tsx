@@ -1,8 +1,8 @@
-import utils from '../styles/utils.module.css';
-import styles from '../styles/hero.module.css';
-import heroImg from '../assets/play-games.png';
+import utils from '../../styles/utils.module.css';
+import styles from '../../styles/hero.module.css';
+import heroImg from '../../assets/play-games.png';
 import { Link } from 'react-router-dom';
-export const Hero = () => {
+export const Hero = (): JSX.Element => {
   return (
     <section className={utils.container}>
       <div className={styles.hero_container}>

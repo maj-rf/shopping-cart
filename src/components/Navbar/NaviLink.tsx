@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import styles from '../styles/navbar.module.css';
+import styles from '../../styles/navbar.module.css';
 type NavProps = {
   path: string;
   hide: () => void;

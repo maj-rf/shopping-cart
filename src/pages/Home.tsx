@@ -1,8 +1,8 @@
-import { Hero } from '../components/Hero';
-import { Footer } from '../components/Footer';
-import { Featured } from '../components/Featured';
+import { Hero } from '../components/Home/Hero';
+import { Footer } from '../components/Home/Footer';
+import { Featured } from '../components/Home/Featured';
 
-export const Home = () => {
+export const Home = (): JSX.Element => {
   return (
     <div>
       <Hero />
