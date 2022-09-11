@@ -10,7 +10,7 @@ type NavProps = {
 
 export const NaviLink = ({ path, hide, name, cartItems }: NavProps) => {
   let activeStyle = {
-    textDecoration: 'underline',
+    backgroundColor: '#2C3333',
   };
 
   return (
@@ -21,10 +21,9 @@ export const NaviLink = ({ path, hide, name, cartItems }: NavProps) => {
         style={({ isActive }): any => (isActive ? activeStyle : undefined)}
       >
         {name === 'Cart' ? (
-          <>
-            <HiShoppingCart />
-            <span>({cartItems})</span>
-          </>
+          <div className={styles.cart_icon}>
+            <HiShoppingCart size={20} /> <span>{cartItems}</span>
+          </div>
         ) : (
           name
         )}

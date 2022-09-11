@@ -51,6 +51,7 @@
 .link a {
   display: block;
   padding: 1rem;
+  height: 100%;
 }
 
 .link:hover {
@@ -74,8 +75,7 @@
 }
 
 .burger,
-.cart_icon,
-.cart_icon_container {
+.cart_icon {
   position: relative;
 }
 
@@ -83,7 +83,6 @@
   background: none;
   border: none;
   color: #fff;
-  font-size: 2rem;
   cursor: pointer;
 }
 
@@ -97,10 +96,25 @@
   right: 0;
   z-index: 1;
   background-color: #e21143;
-  font-size: 1rem;
-  border-radius: 6px;
+  border-radius: 10px;
   width: 1rem;
   height: 1rem;
+  color: #fff;
+}
+
+.cart_icon {
+  padding: 0 0.5rem;
+}
+.cart_icon > * {
+  vertical-align: middle;
+}
+
+.cart_icon span {
+  position: absolute;
+  top: 0;
+  border-radius: 6px;
+  padding: 0 0.1rem;
+  background-color: #e21143;
   color: #fff;
 }
 

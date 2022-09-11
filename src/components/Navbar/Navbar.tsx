@@ -24,8 +24,14 @@ export const Navbar = () => {
         <div className={styles.burger}>
           <button className={styles.menu_btn} onClick={changeVisibility}>
             {' '}
-            {showLinks ? <HiOutlineX /> : <HiMenu />}{' '}
-            <p className={styles.cart_num}>{cartItems.length}</p>
+            {showLinks ? (
+              <HiOutlineX size={32} />
+            ) : (
+              <>
+                <HiMenu size={32} />
+                <p className={styles.cart_num}>{cartItems.length}</p>
+              </>
+            )}{' '}
           </button>
           {/* <span>{cartItems.length}</span> */}
         </div>
