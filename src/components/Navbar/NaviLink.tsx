@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styles from '../../styles/navbar.module.css';
+import { HiShoppingCart } from 'react-icons/hi';
 type NavProps = {
   path: string;
   hide: () => void;
@@ -19,7 +20,14 @@ export const NaviLink = ({ path, hide, name, cartItems }: NavProps) => {
         onClick={hide}
         style={({ isActive }): any => (isActive ? activeStyle : undefined)}
       >
-        {name} {cartItems}
+        {name === 'Cart' ? (
+          <>
+            <HiShoppingCart />
+            <span>({cartItems})</span>
+          </>
+        ) : (
+          name
+        )}
       </NavLink>
     </li>
   );

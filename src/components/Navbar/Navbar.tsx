@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from '../../styles/navbar.module.css';
 import { useShoppingCart } from '../context/CartContext';
 import { NaviLink } from './NaviLink';
+import { HiMenu, HiOutlineX } from 'react-icons/hi';
 
 export const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -21,7 +22,11 @@ export const Navbar = () => {
       <nav className={styles.navbar}>
         <div className={styles.logo}>SWITCHER</div>
         <div className={styles.burger}>
-          <button onClick={changeVisibility}> [=] </button>
+          <button className={styles.menu_btn} onClick={changeVisibility}>
+            {' '}
+            {showLinks ? <HiOutlineX /> : <HiMenu />}{' '}
+            <p className={styles.cart_num}>{cartItems.length}</p>
+          </button>
           {/* <span>{cartItems.length}</span> */}
         </div>
         <ul
