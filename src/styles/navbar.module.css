@@ -1,0 +1,143 @@
+@value dark, navy-100, teal-200, teal-100, darker, crimson-100, light-100 from 'global.css';
+
+.header {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -o-sticky;
+  position: -ms-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: darker;
+  padding: 0.6rem 0;
+  position: relative;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background-image: linear-gradient(60deg, #e21143, #ffb03a);
+  background-clip: text;
+  color: transparent;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 3.6rem;
+  right: 0;
+  visibility: hidden;
+  transform: translate(-100%);
+  background-color: darker;
+}
+
+.link {
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all 0.1s ease-in;
+}
+
+/* fill the parent of link*/
+.link a {
+  display: block;
+  padding: 1rem;
+  height: 100%;
+}
+
+.link:hover {
+  border-radius: 0.5rem;
+  background-color: dark;
+  filter: brightness(1.4);
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.showLinks {
+  transform: translateX(0);
+  visibility: visible;
+  transition: all 0.5s ease-in;
+}
+
+.hideLinks {
+  visibility: hidden;
+}
+
+.burger,
+.cart_icon {
+  position: relative;
+}
+
+.menu_btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu_btn > * {
+  vertical-align: middle;
+}
+
+.cart_num {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #e21143;
+  border-radius: 10px;
+  width: 1rem;
+  height: 1rem;
+  color: #fff;
+}
+
+.cart_icon {
+  padding: 0 0.5rem;
+}
+.cart_icon > * {
+  vertical-align: middle;
+}
+
+.cart_icon span {
+  position: absolute;
+  top: 0;
+  border-radius: 6px;
+  padding: 0 0.1rem;
+  background-color: #e21143;
+  color: #fff;
+}
+
+@media screen and (min-width: 800px) {
+  .navbar {
+    padding: 0;
+    margin: 0;
+  }
+  .burger {
+    display: none;
+  }
+  .links {
+    position: relative;
+    width: unset;
+    height: unset;
+    top: unset;
+    right: unset;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: unset;
+    transform: unset;
+    transition: unset;
+    visibility: visible;
+  }
+}

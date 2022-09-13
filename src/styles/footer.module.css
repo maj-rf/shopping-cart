@@ -1,0 +1,23 @@
+@value darker, light-100, crimson-100, orange-100 from 'global.css';
+
+.footer_container {
+  display: grid;
+  text-align: left;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  place-items: center;
+  gap: 1rem;
+  background-color: darker;
+  min-height: unset;
+  padding: 5rem 0;
+}
+
+.footer_container h2 {
+  border-left: 0.5rem ridge white;
+  background-image: linear-gradient(60deg, crimson-100, orange-100);
+  background-clip: text;
+  color: transparent;
+}
+
+.footer_item {
+  min-width: 300px;
+}
