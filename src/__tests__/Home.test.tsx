@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { CartProvider } from '../components/context/CartContext';
 
 describe('Home Page', () => {
-  let homepage;
+  let homepage: JSX.Element;
   beforeEach(() => {
     homepage = (
       <BrowserRouter>

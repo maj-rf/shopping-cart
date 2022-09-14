@@ -4,9 +4,9 @@ import { BrowserRouter } from 'react-router-dom';
 import { CartProvider } from '../components/context/CartContext';
 
 describe('Shop Page', () => {
-  let shoppage;
+  let shopPage: JSX.Element;
   beforeEach(() => {
-    shoppage = (
+    shopPage = (
       <BrowserRouter>
         <CartProvider>
           <Shop />
@@ -15,7 +15,7 @@ describe('Shop Page', () => {
     );
   });
   it('renders Shop Heading', () => {
-    render(shoppage);
+    render(shopPage);
     const shopHeading = screen.getByText(/Shop/);
     expect(shopHeading).toBeInTheDocument();
   });
