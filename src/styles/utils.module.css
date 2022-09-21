@@ -7,6 +7,10 @@
   color: light-100;
 }
 
+.calc_height {
+  min-height: calc(100vh - 3.6rem);
+}
+
 .common_btn {
   padding: 1rem 1.3rem;
   margin-bottom: 2rem;
