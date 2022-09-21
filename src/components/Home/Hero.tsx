@@ -4,7 +4,7 @@ import heroImg from '../../assets/play-games.png';
 import { Link } from 'react-router-dom';
 export const Hero = (): JSX.Element => {
   return (
-    <section className={utils.container}>
+    <section className={`${utils.container} ${utils.calc_height}`}>
       <div className={styles.hero_container}>
         <img src={heroImg} alt="guy playing games on tv" />
         <div>
